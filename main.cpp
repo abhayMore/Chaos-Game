@@ -102,7 +102,7 @@ int main()
     std::cin >> VertexNumber >> DistanceFactor;
     
     sf::RenderWindow window(sf::VideoMode(800, 600), "ChaosGame");
-    window.setVerticalSyncEnabled(true);
+    window.setVerticalSyncEnabled(true); // comment this if want to increase the FPS and uncomment below "window.setFramerateLimit(120);" and 		 give necessary FPS.
 
    
     //window.setFramerateLimit(120);
