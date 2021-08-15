@@ -100,14 +100,21 @@ int main()
     int VertexNumber;
     float DistanceFactor;
     std::cin >> VertexNumber >> DistanceFactor;
-    
-    sf::RenderWindow window(sf::VideoMode(800, 600), "ChaosGame");
-    window.setVerticalSyncEnabled(true); // comment this if want to increase the FPS and uncomment below "window.setFramerateLimit(120);" and 		 give necessary FPS.
-
-   
-    //window.setFramerateLimit(120);
 
     Quadrilateral Shape(VertexNumber, DistanceFactor);
+
+    sf::RenderWindow window(sf::VideoMode(800, 600), "ChaosGame");
+
+    // comment below line if want to increase the FPS and uncomment below "window.setFramerateLimit(120);" and give necessary FPS.
+    window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(120);
+
+
+    sf::RenderTexture canvas;
+    canvas.create(800,600);
+    sf::Sprite sprite;
+    sprite.setTexture(canvas.getTexture(), true);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -116,14 +123,16 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
         Shape.Movement();
-	
-        //window.clear();
 
-	window.draw(Shape.DrawQuad());
-        window.draw(Shape.DrawCircle());
-        	
+        canvas.draw(Shape.DrawCircle());
+        canvas.display();
+
+        window.clear();
+
+        window.draw(sprite);
+	      window.draw(Shape.DrawQuad());
+
         window.display();
     }
 }
