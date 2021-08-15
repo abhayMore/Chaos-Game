@@ -109,7 +109,6 @@ int main()
     window.setVerticalSyncEnabled(true);
     //window.setFramerateLimit(120);
 
-
     sf::RenderTexture canvas;
     canvas.create(800,600);
     sf::Sprite sprite;
