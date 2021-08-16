@@ -28,7 +28,7 @@ Run command : ```make F1=main.cpp```
 
 This is a Sierpinski Triangle, it is an n-flake, where n is 3 and the distance factor is 1/2 or 0.5.
 
-![output](https://raw.githubusercontent.com/abhayMore/Chaos-Game/master/Triangle.gif)
+![output](https://raw.githubusercontent.com/abhayMore/Chaos-Game/master/Output.gif)
 
 
 
